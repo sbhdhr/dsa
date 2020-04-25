@@ -21,6 +21,10 @@ public class Main {
         //BubbleSort.sort(arr, true);
         //SelectionSort.sort(arr);
         //SelectionSort.sort(arr,true);
+        //InsertionSort.sort(arr);
+        //InsertionSort.sort(arr,true);
+        //ShellSort.sort(arr);
+        //ShellSort.sort(arr,true);
 
         System.out.println("\n\nArray after sorting::");
         for (int e : arr) {
