@@ -1,6 +1,7 @@
 package demo.sbhdhr;
 
-public class BubbleSort {
+public class SelectionSort {
+    //Unstable
 
     private static <T> void swap(T[] a, int i, int j) {
         if (i == j)
@@ -16,18 +17,20 @@ public class BubbleSort {
 
     public static <T extends Comparable<T>> void sort(T[] a, boolean desc) {
         for (int lastUnsortedIndex = a.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-            for (int i = 0; i < lastUnsortedIndex; i++) {
+            //T largestVal = a[0];
+            int largest = 0;
+            for (int i = 1; i <= lastUnsortedIndex; i++) {
                 if (desc) {
-                    if (a[i].compareTo(a[i + 1]) < 0) {
-                        swap(a, i, i + 1);
+                    if (a[i].compareTo(a[largest]) < 0) {
+                        largest = i;
                     }
                 } else {
-                    if (a[i].compareTo(a[i + 1]) > 0) {
-                        swap(a, i, i + 1);
+                    if (a[i].compareTo(a[largest]) > 0) {
+                        largest = i;
                     }
                 }
-
             }
+            swap(a, largest, lastUnsortedIndex);
         }
     }
 }
