@@ -6,13 +6,20 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-	    int[] arr = new int[50];
+        Integer[] arr = new Integer[50];
 
-	    Random random = new Random();
+        Random random = new Random();
         //int number = random.nextInt(max - min) + min;
-        Arrays.parallelSetAll(arr,e-> random.nextInt(500+100)-100);
+        Arrays.parallelSetAll(arr, e -> random.nextInt(500 + 100) - 100);
 
-        System.out.println("Array of length: "+arr.length);
+        System.out.println("Array of length: " + arr.length);
+        for (int e : arr) {
+            System.out.print(e + " ");
+        }
+
+        BubbleSort.sort(arr, true);
+
+        System.out.println("Array after sorting::");
         for (int e : arr) {
             System.out.print(e + " ");
         }
